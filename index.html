@@ -4,13 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Day Forecast Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap-grid.min.css"
-        integrity="sha512-LLxZHu50SXdFJdAzHmDJAoLaozhTB4BYZPoN+xdTRjiPmPhI+1mEJXdoHHiDWmd/jj/9x10pkd8mYGG9sqfPPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <main class="container">
+        <div class="row bg-primary">
+            <h1 class="text-white align-middle mx-auto">Weather Dashboard</h1>
+        </div>
+        <div class="row p-2">
+            <div class="col-3">
+                <h2>Search for a City:</h2>
+                <form id="city-form">
+                    <div class="form-group">
+                        <input id="city-input" class="form-control" type="text" placeholder="San Diego">
+                    </div>
+                    <button id="submit-button" type="submit" class="btn btn-primary btn-block">Search</button>
+                </form>
+
+                <hr>
+                <div id="city-buttons">
+                    <button id="austin" class="btn btn-secondary btn-block">Austin</button>
+                    <button id="chicago" class="btn btn-secondary btn-block">Chicago</button>
+                    <button id="new-york" class="btn btn-secondary btn-block">New York</button>
+                    <button id="orlando" class="btn btn-secondary btn-block">Orlando</button>
+                    <button id="san-fransisco" class="btn btn-secondary btn-block">San Fransisco</button>
+                    <button id="seattle" class="btn btn-secondary btn-block">Seattle</button>
+                    <button id="denver" class="btn btn-secondary btn-block">Denver</button>
+                    <button id="atlanta" class="btn btn-secondary btn-block">Atlanta</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="border">
+                    <h2 id="city-date-0">Atlanta (3/30/2021)</h2>
+                    <p>Temp: <span id="temp-0">74.01</span> F</p>
+                    <p>Wind: <span id="wind-0">6.67</span> MPH</p>
+                    <p>Humidity: <span id="humidity-0">46</span> %</p>
+                    <p>UV Index: <span id="uv-index-0" class="bg-success p-1 rounded">0.47</span></p>
+                </div>
+                <div>
+                    <h2>5-Day Forecast</h2>
+                </div>
+                <div class="row p-1 d-flex justify-content-around">
+                    <div class="col-2 bg-dark text-white p-2">
+                        <h6 id="city-date-1">Atlanta (3/30/2021)</h6>
+                        <p>Temp: <span id="temp-1">74.01</span> F</p>
+                        <p>Wind: <span id="wind-1">6.67</span> MPH</p>
+                        <p>Humidity: <span id="humidity-1">46</span> %</p>
+                    </div>
+                    <div class="col-2 bg-dark text-white p-2">
+                        <h6 id="city-date-2">Atlanta (3/30/2021)</h6>
+                        <p>Temp: <span id="temp-2">74.01</span> F</p>
+                        <p>Wind: <span id="wind-2">6.67</span> MPH</p>
+                        <p>Humidity: <span id="humidity-2">46</span> %</p>
+                    </div>
+                    <div class="col-2 bg-dark text-white p-2">
+                        <h6 id="city-date-3">Atlanta (3/30/2021)</h6>
+                        <p>Temp: <span id="temp-3">74.01</span> F</p>
+                        <p>Wind: <span id="wind-3">6.67</span> MPH</p>
+                        <p>Humidity: <span id="humidity-3">46</span> %</p>
+                    </div>
+                    <div class="col-2 bg-dark text-white p-2">
+                        <h6 id="city-date-4">Atlanta (3/30/2021)</h6>
+                        <p>Temp: <span id="temp-4">74.01</span> F</p>
+                        <p>Wind: <span id="wind-4">6.67</span> MPH</p>
+                        <p>Humidity: <span id="humidity-4">46</span> %</p>
+                    </div>
+                    <div class="col-2 bg-dark text-white p-2">
+                        <h6 id="city-date-5">Atlanta (3/30/2021)</h6>
+                        <p>Temp: <span id="temp-5">74.01</span> F</p>
+                        <p>Wind: <span id="wind-5">6.67</span> MPH</p>
+                        <p>Humidity: <span id="humidity-5">46</span> %</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
